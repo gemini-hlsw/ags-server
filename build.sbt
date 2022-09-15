@@ -8,7 +8,7 @@ name                 := "ags-server"
 scalaVersion         := "2.11.11"
 scalacOptions        += "-Yrangepos"
 libraryDependencies ++= Seq(
-  "org.eclipse.jetty" %  "jetty-server"  % "9.4.15.v20190215",
-  "org.eclipse.jetty" %  "jetty-servlet" % "9.4.15.v20190215"
+  "org.eclipse.jetty" %  "jetty-server"  % "9.4.49.v20220914",
+  "org.eclipse.jetty" %  "jetty-servlet" % "9.4.49.v20220914"
 )
 
