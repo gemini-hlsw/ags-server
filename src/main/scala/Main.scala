@@ -1,5 +1,6 @@
 package ags
 
+import edu.gemini.ags.servlet.estimation.AgsServlet;
 import edu.gemini.ags.servlet.JsonServlet
 import edu.gemini.ags.conf.ProbeLimitsTable
 import org.eclipse.jetty.server.Server
@@ -22,17 +23,17 @@ object Main {
 
     val magTable = ProbeLimitsTable.loadOrThrow()
     // Set up our handler
-    handler.addServletWithMapping(new ServletHolder(new JsonServlet(magTable)), "/json")
+    handler.addServletWithMapping(new ServletHolder(new AgsServlet(magTable)), "/ags")
+    handler.addServletWithMapping(new ServletHolder(new JsonServlet(magTable)), "/json-ags")
 
     // And start our server
-    // server.setErrorHandler(new ErrorPageErrorHandler())
     server.setHandler(handler)
     // server.setHandler(new RequestLogHandler())
     try {
-    server.start()
-    server.join()
+      server.start()
+      server.join()
     } catch {
-      case t => t.printStackTrace()
+      case t: Throwable => t.printStackTrace()
     }
 
   }
