@@ -8,8 +8,8 @@ if [ -z $1 ]; then
 fi
 
 if [ -d $1 ]; then
-  BUNDLE=$(greadlink -f "$1")
-  LIB="$(dirname "$(greadlink -f "$0")")/lib"
+  BUNDLE=$(readlink -f "$1")
+  LIB="$(dirname "$(readlink -f "$0")")/lib"
   mkdir -p "$LIB"
   echo "🔸 Reading from $BUNDLE"
   echo "🔸 Writing to   $LIB"
@@ -37,11 +37,13 @@ cp "$BUNDLE"/edu-gemini-shared-util_2.11*.jar "$LIB"
 cp "$BUNDLE"/edu-gemini-spmodel-core_2.11*.jar "$LIB"
 cp "$BUNDLE"/edu-gemini-spmodel-pio_2.11*.jar "$LIB"
 cp "$BUNDLE"/edu-gemini-util-skycalc_2.11*.jar "$LIB"
+cp "$BUNDLE"/edu-gemini-model-p1_2.11*.jar "$LIB"
 # cp "$BUNDLE"/org-jfree_*.jar "$LIB"
 cp "$BUNDLE"/scalaz-core_2.11*.jar "$LIB"
 cp "$BUNDLE"/scalaz-concurrent_2.11*.jar "$LIB"
 cp "$BUNDLE"/scala-xml_2.11*.jar "$LIB"
 cp "$BUNDLE"/squants_2.11*.jar "$LIB"
+cp "$BUNDLE"/org-dom4j*.jar "$LIB"
 cp "$BUNDLE"/scala-parser-combinators_2.11*.jar "$LIB"
 cp "$BUNDLE"/org.apache.httpcomponents.httpcore*.jar "$LIB"
 cp "$BUNDLE"/org.apache.httpcomponents.httpclient*.jar "$LIB"
