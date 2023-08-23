@@ -1,1 +1,1 @@
-web: target/universal/stage/bin/itc-server
+web: target/universal/stage/bin/ags-server
