@@ -17,4 +17,4 @@ libraryDependencies ++= Seq(
 )
 
 buildInfoKeys := Seq[BuildInfoKey](name, version, git.gitDescribedVersion, git.baseVersion, buildInfoBuildNumber)
-buildInfoPackage := "itc"
+buildInfoPackage := "ags"
